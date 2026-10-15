@@ -17,7 +17,7 @@ from reportlab.platypus import (
 
 
 ROOT = Path(__file__).resolve().parents[1]
-OUTPUT = ROOT / "output" / "pdf" / "bitacora-programacion-ia.pdf"
+OUTPUT = ROOT / "bitacora-programacion-ia.pdf"
 OUTPUT.parent.mkdir(parents=True, exist_ok=True)
 
 PAGE_W, PAGE_H = letter
@@ -265,4 +265,3 @@ story.extend(
 
 doc.build(story)
 print(OUTPUT)
-

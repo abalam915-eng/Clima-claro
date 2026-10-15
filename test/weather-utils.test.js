@@ -55,4 +55,3 @@ test("ofrece mensajes distintos para errores esperados", () => {
   assert.match(friendlyError({ type: "timeout" }), /tardó demasiado/);
   assert.match(friendlyError({ type: "connection" }), /conexión/);
 });
-

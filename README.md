@@ -2,6 +2,19 @@
 
 Clima Claro es una aplicación web pequeña para consultar las condiciones meteorológicas actuales y el pronóstico de los próximos siete días. El usuario escribe una ciudad, la aplicación localiza sus coordenadas y presenta temperatura, sensación térmica, humedad, viento, probabilidad de lluvia y estado general del cielo.
 
+📄 **[Ver la bitácora de programación con IA](./bitacora-programacion-ia.pdf)**
+
+## Tecnologías web utilizadas
+
+- **HTML5:** estructura semántica, formulario de búsqueda, plantillas y atributos de accesibilidad.
+- **CSS3:** diseño visual adaptable con Grid, Flexbox, propiedades personalizadas y media queries.
+- **JavaScript (ES Modules):** lógica de la interfaz, validación y actualización dinámica del contenido.
+- **Fetch API y servicios REST:** comunicación con las API de geocodificación y pronóstico de Open-Meteo.
+- **Web Storage API (`localStorage`):** conservación de la preferencia de temperatura del usuario.
+- **Node.js:** servidor HTTP local y ejecución de pruebas automatizadas.
+
+Python no forma parte de la aplicación web: se usa únicamente como herramienta auxiliar para generar la bitácora en PDF.
+
 ## Funciones principales
 
 - Búsqueda de ciudades en español.
@@ -64,8 +77,7 @@ dist/
   weather-utils.js     Funciones de formato, validación y códigos del clima
 test/
   weather-utils.test.js
-output/pdf/
-  bitacora-programacion-ia.pdf
+bitacora-programacion-ia.pdf  Bitácora de programación con IA
 ```
 
 ## Seguridad y variables de entorno
@@ -90,6 +102,7 @@ Se utilizó OpenAI Codex para:
 
 - La documentación oficial de Open-Meteo se consultó para confirmar los parámetros de los endpoints.
 - Git y GitHub se utilizan para conservar el historial del desarrollo y publicar el repositorio.
+- Python y ReportLab se utilizan solamente para generar el documento PDF de la bitácora.
 
 ## Trabajo realizado sin ayuda de IA
 
@@ -111,4 +124,3 @@ GitHub: [@abalam915-eng](https://github.com/abalam915-eng)
 ## Créditos
 
 Datos meteorológicos proporcionados por [Open-Meteo](https://open-meteo.com/), bajo sus condiciones de uso para proyectos no comerciales.
-

@@ -1,3 +1,5 @@
 *.pdf -text
-
+dist/*.html linguist-vendored=false linguist-generated=false linguist-detectable=true
+dist/*.css linguist-vendored=false linguist-generated=false linguist-detectable=true
+dist/*.js linguist-vendored=false linguist-generated=false linguist-detectable=true
 

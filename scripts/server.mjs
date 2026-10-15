@@ -38,4 +38,3 @@ const server = createServer(async (request, response) => {
 server.listen(port, () => {
   console.log(`Clima Claro disponible en http://localhost:${port}`);
 });
-

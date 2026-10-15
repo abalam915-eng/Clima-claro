@@ -84,4 +84,3 @@ export function friendlyError(error) {
   return "Ocurrió un problema al consultar el clima. Intenta nuevamente en unos minutos.";
 }
 
-

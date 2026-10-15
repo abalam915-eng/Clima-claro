@@ -262,4 +262,3 @@ window.addEventListener("online", () => {
 
 elements.input.value = "Ciudad de México";
 searchWeather(elements.input.value);
-
