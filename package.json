@@ -1,0 +1,13 @@
+{
+  "name": "clima-claro",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Aplicacion web de pronostico del clima con datos de Open-Meteo.",
+  "scripts": {
+    "start": "node scripts/server.mjs",
+    "test": "node --test"
+  }
+}
+
+
