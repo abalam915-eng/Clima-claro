@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Consulta el clima actual y el pronóstico de siete días de cualquier ciudad."
+    />
+    <title>Clima Claro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="#" aria-label="Clima Claro, inicio">
+          <span class="brand-mark" aria-hidden="true">CC</span>
+          <span>Clima Claro</span>
+        </a>
+        <span class="api-label">Datos de Open-Meteo</span>
+      </header>
+
+      <main>
+        <section class="hero" aria-labelledby="hero-title">
+          <p class="eyebrow">Pronóstico sencillo, decisiones fáciles</p>
+          <h1 id="hero-title">El clima que necesitas,<br />sin ruido.</h1>
+          <p class="hero-copy">
+            Busca una ciudad y consulta las condiciones actuales y el pronóstico de los
+            próximos siete días.
+          </p>
+
+          <form class="search-form" id="search-form" role="search" novalidate>
+            <label class="sr-only" for="city-input">Ciudad</label>
+            <div class="search-field">
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <path d="m21 21-4.35-4.35m2.35-5.15a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Z" />
+              </svg>
+              <input
+                id="city-input"
+                name="city"
+                type="search"
+                placeholder="Ej. Merida, Yucatan"
+                autocomplete="off"
+                minlength="2"
+                maxlength="80"
+                required
+              />
+            </div>
+            <button type="submit">Consultar clima</button>
+          </form>
+          <p class="search-hint">Prueba con Ciudad de México, Cancún o Madrid.</p>
+        </section>
+
+        <section class="status-panel" id="status-panel" aria-live="polite">
+          <div class="loader" aria-hidden="true"></div>
+          <p id="status-message">Preparando el pronostico...</p>
+          <button class="retry-button" id="retry-button" type="button" hidden>Reintentar</button>
+        </section>
+
+        <section class="weather-view" id="weather-view" hidden>
+          <div class="location-row">
+            <div>
+              <p class="eyebrow" id="local-time-label">Ahora</p>
+              <h2 id="location-name">Ciudad</h2>
+              <p id="location-detail">Region, pais</p>
+            </div>
+            <button class="unit-toggle" id="unit-toggle" type="button" aria-label="Cambiar unidad de temperatura">
+              <span class="active" data-unit="c">°C</span>
+              <span data-unit="f">°F</span>
+            </button>
+          </div>
+
+          <article class="current-card">
+            <div class="current-main">
+              <div class="weather-icon" id="current-icon" aria-hidden="true">☀</div>
+              <div>
+                <p class="temperature" id="current-temperature">--°</p>
+                <p class="condition" id="current-condition">Condicion</p>
+              </div>
+            </div>
+            <dl class="metrics">
+              <div>
+                <dt>Sensación</dt>
+                <dd id="apparent-temperature">--°</dd>
+              </div>
+              <div>
+                <dt>Humedad</dt>
+                <dd id="humidity">--%</dd>
+              </div>
+              <div>
+                <dt>Viento</dt>
+                <dd id="wind-speed">-- km/h</dd>
+              </div>
+            </dl>
+          </article>
+
+          <div class="forecast-heading">
+            <div>
+              <p class="eyebrow">Siguiente semana</p>
+              <h2>Pronóstico de 7 días</h2>
+            </div>
+            <p id="updated-at"></p>
+          </div>
+          <div class="forecast-grid" id="forecast-grid"></div>
+        </section>
+      </main>
+
+      <footer>
+        <p>Clima Claro usa datos meteorológicos abiertos de Open-Meteo.</p>
+        <p>Proyecto académico · 2026</p>
+      </footer>
+    </div>
+
+    <template id="forecast-template">
+      <article class="forecast-card">
+        <p class="forecast-day"></p>
+        <p class="forecast-date"></p>
+        <div class="forecast-icon" aria-hidden="true"></div>
+        <p class="forecast-condition"></p>
+        <p class="forecast-temp"><strong class="temp-max"></strong><span class="temp-min"></span></p>
+        <p class="rain-chance"></p>
+      </article>
+    </template>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
+
+
